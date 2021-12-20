@@ -7,15 +7,14 @@ function Todos() {
     // the last argument below [] means it will fire onMount (GET by default)
     const {data = [] } = useFetch('https://fakestoreapi.com/products', options, [])
     return (
-        <div>
+        <div className={style.wrap}>
             {data.map(data => (<div key={data.id}>
-                <div className={style.form}>
+                <div className={style.product}>
                     <h3>{data.title}</h3>
-                    <h4>{data.price} </h4>
-                    <p>{data.description}</p>
+                    <h4>{data.price} $ </h4>
+                    
                     <img src={data.image} alt="im" />
-                    <p>{data.rating.rate}</p>
-                    <small>{data.rating.count}</small>
+                    
                     </div>
                     </div>))}
         </div>
